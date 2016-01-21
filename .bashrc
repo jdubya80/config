@@ -91,8 +91,20 @@ shopt -s histappend
 #when the shell exits, append to history file and reread it
 export PROMPT_COMMAND="${PROMPT_COMMAND:+$PROMPT_COMMAND$'\n'}history -a; history -c; history -r"
 
+#not sure this is where bad things are happening... I tried writing history from different screens to the history file.
+#The problem that I was experiencing was going to a screen and expecting to find out what I was doing on that screen
+#when I left it isn't a viable expectation
+
 #start ssh agent and export it's variables to the environment
-eval `ssh-agent -s`
+#this seems to be messing with the ability to do scp's - keeping it in bash_profile may be ok... need to learn more
+#eval `ssh-agent -s`
 
 #add our agent
-ssh-add
+#this seems to be messing with the ability to do scp's - keeping it in bash_profile may be ok... need to learn more
+#ssh-add
+
+#I think I've figured out how I can do self updating configs
+#script a check for the latest bash version that re-places itself
+#may not want to be autopopulated
+#may not want autority everywhere for github repo
+#could be that the only thing in this repo is config and is user controlled/permissioned
