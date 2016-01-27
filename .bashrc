@@ -49,7 +49,7 @@ if [ -f /usr/share/bash-completion/git ]; then
     source /usr/share/bash-completion/git
 fi
 
-if [ -f /usr/share/bash-completion/git ]; then
+if [ -f ~/git-completion.bash ]; then
     source ~/git-completion.bash
 fi
 
