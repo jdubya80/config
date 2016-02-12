@@ -66,7 +66,7 @@ else
     
     #PS1='$(formattedGitBranch) '
  
-    export PS1='\[\033[01;32m\]\h\[\033[01;34m\] \w\[\033[01;33m\]$(formattedGitBranch)\[\033[01;34m\]\$\[\033[00m\] '
+    export PS1='\[\033[01;32m\]\h\[\033[01;36m\] \w\[\033[01;33m\]$(formattedGitBranch)\[\033[01;34m\]\$\[\033[00m\] '
 fi
 
 # Cool trick to show current git branch in the command prompt in gentoo colors.
