@@ -44,7 +44,14 @@ set ttyfast                              " makes things... smoother?
 set list
 set listchars=trail:.,tab:»·
 
-set runtimepath^=~/.vim/bundle/ctrlp.vim
-set runtimepath^=~/.vim/bundle/vim-fugitive.vim
+map <C-j> <ESC>:bp<CR>
+map <C-k> <ESC>:bn<CR>
+
+"set runtimepath^=~/.vim/bundle/ctrlp.vim
+"set runtimepath^=~/.vim/bundle/vim-fugitive.vim
 
 execute pathogen#infect()
+
+let g:ctrlp_root_markers = ['.domainconfig'] "from Matt Styles: ctrlP will start the 'base' of the search from the nearest directory with a .domainconfig
+let g:ctrlp_use_caching=1
+let g:ctrlp_max_files = 0
