@@ -51,6 +51,10 @@ map <C-k> <ESC>:bn<CR>
 "set runtimepath^=~/.vim/bundle/vim-fugitive.vim
 
 execute pathogen#infect()
+"the following lines are recommended as minimums by the pathogen boys (tpope) and was necessary to get go 
+"highlighting/plugin working on my mac
+syntax on
+filetype plugin indent on
 
 let g:ctrlp_root_markers = ['.domainconfig'] "from Matt Styles: ctrlP will start the 'base' of the search from the nearest directory with a .domainconfig
 let g:ctrlp_use_caching=1
