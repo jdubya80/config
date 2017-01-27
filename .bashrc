@@ -14,6 +14,10 @@ alias fmysql='ps aux | grep mysq[l]'
 alias mysqlb='/etc/init.d/mysql start'
 alias mysqle='/etc/init.d/mysql stop'
 alias mysqlv='/usr/sbin/mysqld --version'
+alias gos='cd "$GOPATH"/src'
+alias vim='/usr/local/bin/vim'
+
+alias gs='git status'
 
 function checkoutfoo() {
     git branch | grep "$@" | xargs git checkout;
@@ -49,6 +53,7 @@ if [ -f /usr/share/bash-completion/git ]; then
     source /usr/share/bash-completion/git
 fi
 
+#if [ -f /usr/share/bash-completion/git ]; then
 if [ -f ~/git-completion.bash ]; then
     source ~/git-completion.bash
 fi
@@ -57,7 +62,7 @@ if [ -f /Applications/SourceTree.app/Contents/Resources/git_local/contrib/comple
     source /Applications/SourceTree.app/Contents/Resources/git_local/contrib/completion/git-completion.bash
     GIT_PS1_SHOWDIRTYSTATE=true
     #export PS1='[\u@\h \w$(__git_ps1)]\$ '
-    export PS1='\[\033[01;32m\]\u@\h\[\033[01;34m\] \w\[\033[01;34m\]$(__git_ps1) $ \[\033[00m\]'
+    export PS1='\[\033[01;32m\]\u\[\033[01;34m\] \W\[\033[01;34m\]$(__git_ps1) $ \[\033[00m\]'
 else
     function formattedGitBranch {
         _branch="$(git branch 2>/dev/null | sed -e "/^\s/d" -e "s/^\*\s//")";
@@ -66,13 +71,14 @@ else
     
     #PS1='$(formattedGitBranch) '
  
-    export PS1='\[\033[01;32m\]\h\[\033[01;36m\] \w\[\033[01;33m\]$(formattedGitBranch)\[\033[01;34m\]\$\[\033[00m\] '
+    export PS1='\[\033[01;32m\]\h\[\033[01;34m\] \w\[\033[01;33m\]$(formattedGitBranch)\[\033[01;34m\]\$\[\033[00m\] '
 fi
 
 # Cool trick to show current git branch in the command prompt in gentoo colors.
 #export PS1='\[33[01;32m\]\u@\h\[33[01;34m\] \w$(__git_ps1 " (%s)") \$\[33[00m\] '
 #export PS1='\[33[01;32m\]\u@\h\[33[01;34m\] \w$(" ") \$\[33[00m\] '
 
+#exports are all over the place todo: organize exports
 export EDITOR=vi
 
 #turn off XON/XOFF flow contro
@@ -91,20 +97,8 @@ shopt -s histappend
 #when the shell exits, append to history file and reread it
 export PROMPT_COMMAND="${PROMPT_COMMAND:+$PROMPT_COMMAND$'\n'}history -a; history -c; history -r"
 
-#not sure this is where bad things are happening... I tried writing history from different screens to the history file.
-#The problem that I was experiencing was going to a screen and expecting to find out what I was doing on that screen
-#when I left it isn't a viable expectation
-
 #start ssh agent and export it's variables to the environment
-#this seems to be messing with the ability to do scp's - keeping it in bash_profile may be ok... need to learn more
 #eval `ssh-agent -s`
 
 #add our agent
-#this seems to be messing with the ability to do scp's - keeping it in bash_profile may be ok... need to learn more
 #ssh-add
-
-#I think I've figured out how I can do self updating configs
-#script a check for the latest bash version that re-places itself
-#may not want to be autopopulated
-#may not want autority everywhere for github repo
-#could be that the only thing in this repo is config and is user controlled/permissioned
