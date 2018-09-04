@@ -1,3 +1,4 @@
+set nocompatible "ruby says so https://github.com/vim-ruby/vim-ruby/wiki/VimRubySupport
 set background=dark
 set noautoindent
 set history=10000
@@ -25,7 +26,7 @@ set softtabstop=4                        " back character length
 set tabstop=4                            " tab character length
 set numberwidth=4                        " set line numbers section width
 set shiftwidth=4                         " shift movement length
-set colorcolumn=80
+set colorcolumn=120
 set expandtab
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip " ignored by vim fs access
 set wildignore+=*/templates_c/*,*/bin/*
@@ -40,8 +41,13 @@ set noswapfile                           " dont create tmp backup files
 set scrolloff=3                          " buffer for screen when scrolling
 set ttyfast                              " makes things... smoother?
 
-"set list
-"set listchars=trail:.,tab:��
+"autocmd BufNewFile,BufRead *.ruby set shiftwidth=2
+"autocmd BufNewFile,BufRead *.ruby set tabstop=2
+"autocmd BufNewFile,BufRead *.ruby set softtabstop=2
+
+set list
+set listchars=trail:.,tab:»·
+"set listchars=eol:⏎,trail:␠,tab:␉,nbsp:⎵
 
 "KEY MAPPINGS
 map <C-j> <ESC>:bp<CR>
@@ -54,6 +60,7 @@ nmap <leader>c ::bp\|bd #<CR>
 
 execute pathogen#infect()
 syntax on
+filetype on "ruby says so https://github.com/vim-ruby/vim-ruby/wiki/VimRubySupport
 filetype plugin on
 filetype indent on
 
@@ -154,3 +161,7 @@ nnoremap ^[k :m .+1<CR>==
 "    \ 'ctagsargs' : '-sort -silent'
 "\ }
 "
+
+" add go lint on write support
+set rtp+=$GOPATH/src/github.com/golang/lint/misc/vim
+autocmd BufWritePost,FileWritePost *.go execute 'Lint' | cwindow
