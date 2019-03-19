@@ -5,6 +5,7 @@ export HISTFILESIZE=100000
 alias ll="ls -alh"
 
 #add go gopath
+export GOROOT=/usr/local/Cellar/go@1.10/1.10.4/libexec/
 export GOPATH=$HOME/projects/go
 #export PATH=$PATH:$GOPATH/bin
 export PATH=$PATH:$GOPATH/bin:/usr/local/opt/postgresql@9.4/bin
@@ -20,3 +21,4 @@ fi
 
 # https://github.com/rbenv/rbenv
 eval "$(rbenv init -)"
+export PATH="/usr/local/opt/go@1.10/bin:$PATH"

@@ -33,7 +33,7 @@ set wildignore+=*/templates_c/*,*/bin/*
 set wildignore+=*/node_modules/*
 set t_Co=256
 set wildmenu
-set tags^=./.tags,./.TAGS,.tags,.TAGS
+set tags^=./.tags;,./.TAGS;,.tags;,.TAGS;,tags;$HOME
 
 set nobackup                             " dont create tmp backup files
 set nowritebackup                        " dont create tmp backup files
@@ -165,3 +165,8 @@ nnoremap ^[k :m .+1<CR>==
 " add go lint on write support
 set rtp+=$GOPATH/src/github.com/golang/lint/misc/vim
 autocmd BufWritePost,FileWritePost *.go execute 'Lint' | cwindow
+
+
+" ruby support (and probably more) for moving to the beginning and end of if
+" end blocks
+runtime macros/matchit.vim

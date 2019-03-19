@@ -4,3 +4,5 @@
 \pset linestyle unicode
 \pset border 2
 
+\set HISTSIZE 1000000
+\echo :HISTSIZE
