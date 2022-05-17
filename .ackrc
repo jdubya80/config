@@ -2,3 +2,4 @@
 --type-set=html:ext:tpl,page
 --type-set=java:ext:cls
 --ignore-file=is:tags
+--ignore-file=is:TAGS

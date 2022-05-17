@@ -14,13 +14,21 @@ alias ast='cd /root/dialer_code/AsteriskDialer'
 alias gos='cd "$GOPATH"'
 alias cci='cd /Users/jstubbs/projects/go/src/github.com/PartnerFusionInc/content-import'
 alias ccm='cd /Users/jstubbs/projects/go/src/github.com/PartnerFusionInc/content-management'
-alias cfp='cd /Users/jstubbs/projects/go/src/github.com/PartnerFusionInc/fmap'
-alias ccc='cd /Users/jstubbs/projects/go/src/github.com/PartnerFusionInc/cable'
 alias ccp='cd /Users/jstubbs/projects/go/src/github.com/PartnerFusionInc/picd'
 alias cch='cd /Users/jstubbs/projects/go/src/github.com/PartnerFusionInc/hotel'
 alias cdm='cd /Users/jstubbs/projects/go/src/github.com/PartnerFusionInc/merchanting'
+alias jgo='cd /Users/jstubbs/projects/go/src/github.com/jstubbs'
+
 alias cm='cd /Users/jstubbs/projects/mystique'
+alias cdr='cd /Users/jstubbs/projects/raven'
 alias cdb='cd /Users/jstubbs/projects/databases/postgres/'
+alias capi='cd /Users/jstubbs/projects/go/src/github.com/PartnerFusionInc/content-api'
+alias gstubbs='cd /Users/jstubbs/projects/go/src/github.com/jstubbs'
+alias ak='aws-vault exec devAcct -- kubectl'
+alias att='aws-vault exec terraformAcct -- terraform'
+alias adt='aws-vault exec devAcct -- terraform'
+alias akt='aws-vault exec terraformAcct -- kubectl'
+alias akd='aws-vault exec devAcct -- kubectl describe'
 
 alias fmysql='ps aux | grep mysq[l]'
 alias mysqlb='/etc/init.d/mysql start'
@@ -39,10 +47,18 @@ alias gs='git status'
 alias gd='git diff'
 alias gb='git branch'
 alias gl='git log'
+alias gbc='git branch --contains'
+alias gb='git branch'
 
 #docker, docker-compose
 alias dc='docker-compose'
 alias d='docker'
+
+# kube
+alias k=kubectl
+
+#terraform
+alias t=terraform
 
 function checkoutfoo() {
     git branch | grep "$@" | xargs git checkout;
@@ -122,3 +138,9 @@ export PROMPT_COMMAND="${PROMPT_COMMAND:+$PROMPT_COMMAND$'\n'}history -a; histor
 #postgres stuff
 #export PAGER=less
 #export LESS="-iMSx4 -FX"
+source <(kubectl completion bash)
+
+complete -C /usr/local/bin/vault vault
+
+# elixir stuff
+export ERL_AFLAGS="-kernel shell_history enabled"

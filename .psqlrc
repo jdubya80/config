@@ -6,3 +6,6 @@
 
 \set HISTSIZE 1000000
 \echo :HISTSIZE
+
+\setenv LESS -S
+\setenv PAGER less
