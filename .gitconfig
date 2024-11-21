@@ -6,3 +6,11 @@
 	process = git-lfs filter-process
 	required = true
 	clean = git-lfs clean -- %f
+[credential]
+	helper = osxkeychain
+[pager]
+	branch = false
+[core]
+    pager = less -FRX
+[url "git@github.com:"]
+	insteadOf = https://github.com/

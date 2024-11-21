@@ -1,6 +1,6 @@
 #export HISTCONTROL=erasedups
-export HISTSIZE=100000
-export HISTFILESIZE=100000
+export HISTSIZE=1000000
+export HISTFILESIZE=1000000
 
 alias ll="ls -alh"
 
@@ -39,3 +39,5 @@ export NVM_DIR="$HOME/.nvm"
 # asdf stuff
 . /usr/local/opt/asdf/libexec/asdf.sh
 . /usr/local/opt/asdf/etc/bash_completion.d/asdf.bash
+
+eval "$(/opt/homebrew/bin/brew shellenv)"

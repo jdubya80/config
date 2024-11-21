@@ -1,18 +1,7 @@
 set -o vi
 
-alias astrel='yes y | php /root/dialer_code/Asterisk/asterisk_release.php dev'
-alias acmrel='yes y | php /root/dialer_code/ACM/acm_release.php dev'
-
 # path shortcuts
-alias sta='cd /var/www/sta'
-alias qb='cd /var/www/QueryBuilder'
-alias nex='cd /var/www/sta/ext/is/nexusdomain'
-alias comms='cd /var/www/CommsWorkers'
-alias mac='cd /var/www/MAC'
-alias iswsi='cd /var/www/iswsi'
-alias ast='cd /root/dialer_code/AsteriskDialer'
 alias gos='cd "$GOPATH"'
-alias cci='cd /Users/jstubbs/projects/go/src/github.com/PartnerFusionInc/content-import'
 alias ccm='cd /Users/jstubbs/projects/go/src/github.com/PartnerFusionInc/content-management'
 alias ccp='cd /Users/jstubbs/projects/go/src/github.com/PartnerFusionInc/picd'
 alias cch='cd /Users/jstubbs/projects/go/src/github.com/PartnerFusionInc/hotel'
@@ -21,6 +10,7 @@ alias jgo='cd /Users/jstubbs/projects/go/src/github.com/jstubbs'
 
 alias cm='cd /Users/jstubbs/projects/mystique'
 alias cdr='cd /Users/jstubbs/projects/raven'
+alias cde='cd /Users/jstubbs/projects/elixir'
 alias cdb='cd /Users/jstubbs/projects/databases/postgres/'
 alias capi='cd /Users/jstubbs/projects/go/src/github.com/PartnerFusionInc/content-api'
 alias gstubbs='cd /Users/jstubbs/projects/go/src/github.com/jstubbs'
@@ -29,17 +19,6 @@ alias att='aws-vault exec terraformAcct -- terraform'
 alias adt='aws-vault exec devAcct -- terraform'
 alias akt='aws-vault exec terraformAcct -- kubectl'
 alias akd='aws-vault exec devAcct -- kubectl describe'
-
-alias fmysql='ps aux | grep mysq[l]'
-alias mysqlb='/etc/init.d/mysql start'
-alias mysqle='/etc/init.d/mysql stop'
-alias mysqlv='/usr/sbin/mysqld --version'
-alias vim='/usr/local/bin/vim'
-alias tagit='gotags -R . > tags'
-alias vi="vim"
-
-#ruby/rails bundle
-alias be="bundle exec"
 
 #git
 alias gf='git fetch --all --prune'

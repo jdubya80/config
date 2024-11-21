@@ -9,3 +9,5 @@
 
 \setenv LESS -S
 \setenv PAGER less
+
+\timing
